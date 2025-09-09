@@ -1,0 +1,38 @@
+<div class="login-page">
+  <div class="login-card">
+    <div class="brand">Budgetify</div>
+
+    <form class="form" autocomplete="on">
+      <input
+        class="input"
+        type="email"
+        name="email"
+        placeholder="Email"
+        aria-label="Email"
+        required
+      />
+
+      <div class="password-wrapper">
+        <input
+          class="input password-input"
+          type="password"
+          name="password"
+          placeholder="Password"
+          aria-label="Password"
+          required
+        />
+        <button
+          class="toggle-password"
+          type="button"
+          (click)="togglePassword()"
+          aria-label="Показать/скрыть пароль"
+        >
+          <img ngSrc="/assets/images/eye.png" alt="passwordshow" class="icon-eye" height="300" width="300"/>
+        </button>
+      </div>
+
+
+      <button class="btn" type="submit">login</button>
+    </form>
+  </div>
+</div>

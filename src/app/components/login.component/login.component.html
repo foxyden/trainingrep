@@ -1,9 +1,9 @@
 <div class="login-page">
   <div class="login-card">
     <div class="brand">Budgetify</div>
-
     <form class="form" autocomplete="on">
       <input
+        id="email1"
         class="input"
         type="email"
         name="email"
@@ -12,8 +12,15 @@
         required
       />
 
+      @if (autent()){
+        <div class="error">
+          <p class="error-text">{{autent()}}</p>
+        </div>
+      }
+
       <div class="password-wrapper">
         <input
+          id="password"
           class="input password-input"
           type="password"
           name="password"
@@ -27,12 +34,12 @@
           (click)="togglePassword()"
           aria-label="Показать/скрыть пароль"
         >
-          <img ngSrc="/assets/images/eye.png" alt="passwordshow" class="icon-eye" height="300" width="300"/>
+          <img src="assets/images/eye.png" alt="passwordshow" class="icon-eye" height="300" width="300"/>
         </button>
       </div>
-
-
-      <button class="btn" type="submit">login</button>
+      <button class="btn" type="button" (click)="autent()">login</button>
     </form>
   </div>
 </div>
+
+

@@ -3,9 +3,19 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "trainingrep": {
+    "Budgetify1": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -61,10 +71,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "trainingrep:build:production"
+              "buildTarget": "Budgetify1:build:production"
             },
             "development": {
-              "buildTarget": "trainingrep:build:development"
+              "buildTarget": "Budgetify1:build:development"
             }
           },
           "defaultConfiguration": "development"

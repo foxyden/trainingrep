@@ -8,7 +8,6 @@
 
 # Angular files
 /.angular
-/.vs
 
 # Node
 /node_modules
@@ -23,6 +22,7 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
+/.vs
 
 # Visual Studio Code
 .vscode/*
@@ -44,10 +44,3 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
-
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json

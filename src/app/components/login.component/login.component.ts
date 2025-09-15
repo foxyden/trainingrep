@@ -3,6 +3,7 @@ import {NgOptimizedImage} from '@angular/common';
 import {DataService} from '../../services/data.service';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs';
+import {User} from '../../services/in-memory-data.service';
 
 @Component({
   selector: 'app-login',
@@ -15,41 +16,8 @@ export class LoginComponent {
               private router: Router,
   ) {}
 
-  autent() {
-    // @ts-ignore
-    const temppassword:string = document.getElementById('password').value
-    // @ts-ignore
-    const tempemail:string = document.getElementById('email1').value
-    const arrayLength = this.items.length
-    if (tempemail){
-    for (var i = 0; i < arrayLength; i++) {
-      if (tempemail === this.items[i].email) {
-        if (temppassword === this.items[i].password) {
-          this.router.navigate(['/main']);
-          return false;
-        }
-        else {
-          console.log("wrong password")
-          return "WRONG PASSWORD";
-        }
-      }
-    }
-    console.log("wrong email")
-    return "WRONG EMAIL";
-    }
-    return false;
-  }
-
-  items: any[] = [];
-
-  ngOnInit() {
-    this.getItems();
-  }
-
-  getItems(): void {
-    this.dataService.getItems()
-      .subscribe(
-        items => this.items = items);
+  autent(){
+    this.dataService.autent();
   }
 
   togglePassword() {

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing-module';
-import { App } from './app';
+import { AppComponent } from './app.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { LoginComponent } from './components/login.component/login.component';
 import { MainComponent } from './components/main.component/main.component';
@@ -11,7 +11,7 @@ import {InMemoryData} from './services/in-memory-data.service';
 
 @NgModule({
   declarations: [
-    App,
+    AppComponent,
     LoginComponent,
     MainComponent
   ],
@@ -24,6 +24,6 @@ import {InMemoryData} from './services/in-memory-data.service';
   providers: [
     provideBrowserGlobalErrorListeners()
   ],
-  bootstrap: [App]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

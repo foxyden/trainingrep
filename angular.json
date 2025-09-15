@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Budgetify1": {
+    "Budgetify": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -71,10 +71,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Budgetify1:build:production"
+              "buildTarget": "Budgetify:build:production"
             },
             "development": {
-              "buildTarget": "Budgetify1:build:development"
+              "buildTarget": "Budgetify:build:development"
             }
           },
           "defaultConfiguration": "development"

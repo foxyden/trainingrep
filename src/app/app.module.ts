@@ -7,23 +7,12 @@ import { AppComponent } from './app.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { LoginComponent } from './components/login.component/login.component';
 import { MainComponent } from './components/main.component/main.component';
-import {InMemoryData} from './services/in-memory-data.service';
+import { InMemoryData } from './services/in-memory-data.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    MainComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryData),
-  ],
-  providers: [
-    provideBrowserGlobalErrorListeners()
-  ],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent, LoginComponent, MainComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, HttpClientInMemoryWebApiModule.forRoot(InMemoryData)],
+  providers: [provideBrowserGlobalErrorListeners()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

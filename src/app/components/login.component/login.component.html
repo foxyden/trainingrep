@@ -12,9 +12,9 @@
         required
       />
 
-      @if (autent()){
+      @if (isAuthenticationError()) {
         <div class="error">
-          <p class="error-text">{{autent()}}</p>
+          <p class="error-text">{{ autent() }}</p>
         </div>
       }
 
@@ -34,12 +34,16 @@
           (click)="togglePassword()"
           aria-label="Показать/скрыть пароль"
         >
-          <img src="assets/images/eye.png" alt="passwordshow" class="icon-eye" height="300" width="300"/>
+          <img
+            src="assets/images/eye.png"
+            alt="passwordshow"
+            class="icon-eye"
+            height="300"
+            width="300"
+          />
         </button>
       </div>
       <button class="btn" type="button" (click)="autent()">login</button>
     </form>
   </div>
 </div>
-
-

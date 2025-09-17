@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata:wght@400&display=swap');
+
+.error {
+  color: red;
+  margin: 1px;
+}
+
+.error-text {
+  font-size: 14px;
+  margin: 1px;
+  font-family: 'Alata', sans-serif;
+}
+
+.login-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/assets/images/bg-login.jpg');
+  /*background-color: aquamarine;
+  height: 850px;
+  width: 1332px;*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login-card {
+  width: 515.4px;
+  height: 458.7px;
+  background: #ffffffcc;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
+.brand {
+  font-family: 'Alata', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  line-height: 100%;
+  color: #000000;
+  text-align: center;
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.input {
+  width: 349px;
+  height: 55px;
+  border-radius: 12px;
+  border: 1px solid #666666;
+  padding: 0 16px;
+  box-sizing: border-box;
+  font-family: 'Alata', sans-serif;
+  font-size: 16px;
+  outline: none;
+  background: #fff;
+}
+
+.input::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.password-wrapper {
+  position: relative;
+  width: 349px;
+  height: 55px;
+}
+
+.password-input {
+  width: 100%;
+  padding-right: 48px;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-eye {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.btn {
+  width: 349px;
+  height: 55px;
+  border-radius: 12px;
+  border: none;
+  background: #b9e2e6;
+  font-family: 'Alata', sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  transition:
+    transform 0.06s ease,
+    box-shadow 0.06s ease;
+}
+
+.btn:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}

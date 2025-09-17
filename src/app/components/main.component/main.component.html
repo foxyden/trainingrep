@@ -1,0 +1,32 @@
+<div class="main-page">
+  <div class="left-col">
+    <h1 class="brand">Budgetify</h1>
+
+    <div class="card" [class.inactive]="activeCard !== 'debit'" (click)="toggleCard('debit')">
+      <div class="card-content">
+        <div class="card-header">
+          <span class="card-title">Debit card</span>
+          <div class="icon-circle">$</div>
+        </div>
+        <div class="card-balance">5,356.17</div>
+      </div>
+    </div>
+
+    <div class="card" [class.inactive]="activeCard !== 'credit'" (click)="toggleCard('credit')">
+      <div class="card-content">
+        <div class="card-header">
+          <span class="card-title">Credit card</span>
+          <div class="icon-circle">€</div>
+        </div>
+        <div class="card-balance">5,356.17</div>
+      </div>
+    </div>
+  </div>
+  <div class="center-col"></div>
+  <div class="right-col">
+    <div class="profile">
+      <img src="assets/images/user.png" alt="avatar" class="avatar" />
+      <span class="username">Name Surname</span>
+    </div>
+  </div>
+</div>

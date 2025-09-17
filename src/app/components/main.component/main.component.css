@@ -2,7 +2,7 @@
 
 .main-page {
   display: flex;
-  background-color: #ECEDED;
+  background-color: #eceded;
   height: 100vh;
   padding-top: 30px;
 }
@@ -40,13 +40,16 @@
 .card {
   width: 380px;
   min-height: 170px;
-  background-image: url("/assets/images/gradient.png");
+  background-image: url('/assets/images/gradient.png');
   background-size: cover;
   background-position: right;
   border-radius: 10px;
   margin-bottom: 40px;
   cursor: pointer;
-  transition: opacity 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.15s ease,
+    box-shadow 0.25s ease;
 }
 
 .card.inactive {

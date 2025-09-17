@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("/assets/images/bg-login.jpg");
+  background-image: url('/assets/images/bg-login.jpg');
   /*background-color: aquamarine;
   height: 850px;
   width: 1332px;*/
@@ -29,7 +29,7 @@
 .login-card {
   width: 515.4px;
   height: 458.7px;
-  background: #FFFFFFCC;
+  background: #ffffffcc;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   display: flex;
@@ -60,7 +60,6 @@
   width: 100%;
 }
 
-
 .input {
   width: 349px;
   height: 55px;
@@ -75,7 +74,7 @@
 }
 
 .input::placeholder {
-  color: rgba(0,0,0,0.45);
+  color: rgba(0, 0, 0, 0.45);
 }
 
 .password-wrapper {
@@ -115,11 +114,13 @@
   height: 55px;
   border-radius: 12px;
   border: none;
-  background: #B9E2E6;
+  background: #b9e2e6;
   font-family: 'Alata', sans-serif;
   font-size: 18px;
   cursor: pointer;
-  transition: transform 0.06s ease, box-shadow 0.06s ease;
+  transition:
+    transform 0.06s ease,
+    box-shadow 0.06s ease;
 }
 
 .btn:hover {

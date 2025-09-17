@@ -9,14 +9,14 @@ export interface User {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class InMemoryData implements InMemoryDbService {
   createDb() {
-    const Users : User[] = [
+    const Users: User[] = [
       { id: 1, name: 'John Doe', email: 'test@example.com', password: '12345' },
-    { id: 2, name: 'Jane Dough', email: 'test2@example.com', password: 'qwerty' }
-  ];
+      { id: 2, name: 'Jane Dough', email: 'test2@example.com', password: 'qwerty' },
+    ];
     return { items: Users };
   }
 }

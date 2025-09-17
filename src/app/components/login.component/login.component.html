@@ -1,8 +1,9 @@
 <div class="login-page">
   <div class="login-card">
     <div class="brand">Budgetify</div>
-    <form class="form" autocomplete="on">
+    <form class="form" autocomplete="on" [formGroup]="loginForm">
       <input
+        formControlName="email"
         id="email1"
         class="input"
         type="email"
@@ -11,15 +12,9 @@
         aria-label="Email"
         required
       />
-
-      @if (isAuthenticationError()) {
-        <div class="error">
-          <p class="error-text">{{ autent() }}</p>
-        </div>
-      }
-
       <div class="password-wrapper">
         <input
+          formControlName="password"
           id="password"
           class="input password-input"
           type="password"
@@ -43,7 +38,12 @@
           />
         </button>
       </div>
-      <button class="btn" type="button" (click)="autent()">login</button>
+      <button class="btn" type="button" (click)="onSubmit()">login</button>
+      @if (message) {
+        <div class="error">
+          <p class="error-text">{{message}}</p>
+        </div>
+      }
     </form>
   </div>
 </div>

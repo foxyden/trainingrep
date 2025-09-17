@@ -8,10 +8,11 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { LoginComponent } from './components/login.component/login.component';
 import { MainComponent } from './components/main.component/main.component';
 import { InMemoryData } from './services/in-memory-data.service';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, MainComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, HttpClientInMemoryWebApiModule.forRoot(InMemoryData)],
+    imports: [BrowserModule, AppRoutingModule, HttpClientModule, HttpClientInMemoryWebApiModule.forRoot(InMemoryData), ReactiveFormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [AppComponent],
 })

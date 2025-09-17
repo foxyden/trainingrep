@@ -20,30 +20,18 @@ export class DataService {
     return this.http.get<User[]>(this.apiUrl).pipe(catchError(this.handleError('getUsers', [])));
   }
 
-  Users: User[] = [];
-
-  autent(): boolean {
-    // @ts-ignore
-    const temppassword: string = document.getElementById('password').value;
-    // @ts-ignore
-    const tempemail: string = document.getElementById('email1').value;
-    const arrayLength = this.Users.length;
-    if (tempemail) {
-      for (var i = 0; i < arrayLength; i++) {
-        if (tempemail === this.Users[i].email) {
-          if (temppassword === this.Users[i].password) {
-            this.router.navigate(['/main']);
-            return false;
-          } else {
-            console.log('wrong password');
-            return false;
-          }
-        }
+  checkData(email: string | null | undefined, password: string | null | undefined, Users: User[]) {
+    const found = Users.find((e) => e.email === email);
+    if (found) {
+      if (found.password === password) {
+        this.router.navigate(['/main']);
+        return {success: true, message: `Hello ${found.name}`, userId: found.id};
+      } else {
+        return {success: false, message: "Password is wrong!"};
       }
-      console.log('wrong email');
-      return false;
     }
-    return false;
+    console.log(`Введён email ${email}, найден еmail ${found}`)
+    return {success: false, message: 'Wrong email'};
   }
 
   getUser(id: number): Observable<any> {

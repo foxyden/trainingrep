@@ -1,12 +1,6 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-
-export interface User {
-  id: number;
-  name: string;
-  email: string;
-  password: string;
-}
+import { User } from '../models/user.interface';
 
 @Injectable({
   providedIn: 'root',

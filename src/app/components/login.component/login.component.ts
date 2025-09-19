@@ -2,9 +2,8 @@ import {Component, inject, OnInit, signal} from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { DataService } from '../../services/data.service';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { User } from '../../services/in-memory-data.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { User } from '../../models/user.interface';
 
 @Component({
   selector: 'app-login',
@@ -43,11 +42,13 @@ export class LoginComponent{
       this.loginForm.markAllAsTouched();
       return;
     }
+
     const { email, password } = this.loginForm.value;
-    const result = this.dataService.checkData(email, password, this.AllUsers);
-    console.log('Введены данные:', email, password);
-    this.success = result.success;
-    this.message = result.message;
+    this.dataService.checkData(email, password).subscribe((result) => {
+      this.success = result.success;
+      this.message = result.message;
+      console.log('Введены данные:', email, password);
+    });
   }
   /*
   isAuthenticationError = signal(false);

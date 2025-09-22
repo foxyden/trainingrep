@@ -9,7 +9,7 @@ import { VerificationResult } from '../models/verification-result.interface';
 @Injectable({
   providedIn: 'root',
 })
-export class DataService {
+export class dataService {
   http = inject(HttpClient);
   router = inject(Router);
 

@@ -39,7 +39,7 @@
         </button>
       </div>
       <button class="btn" type="button" (click)="onSubmit()">login</button>
-      @if (message) {
+      @if (!success) {
         <div class="error">
           <p class="error-text">{{message}}</p>
         </div>

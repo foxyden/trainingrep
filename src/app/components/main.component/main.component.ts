@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {DataService} from '../../services/data.service';
+import {dataService} from '../../services/data.service';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +7,9 @@ import {DataService} from '../../services/data.service';
   templateUrl: './main.component.html',
   styleUrl: './main.component.css',
 })
-export class MainComponent {
+export class mainComponent {
   message: string | null = null;
-  dataService = inject(DataService);
+  dataService = inject(dataService);
   activeCard: 'debit' | 'credit' = 'debit';
 
   toggleCard(card: 'debit' | 'credit') {

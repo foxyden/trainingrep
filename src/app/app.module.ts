@@ -5,14 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing-module';
 import { AppComponent } from './app.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { LoginComponent } from './components/login.component/login.component';
-import { MainComponent } from './components/main.component/main.component';
-import { InMemoryData } from './services/in-memory-data.service';
+import { loginComponent } from './components/login.component/login.component';
+import { mainComponent } from './components/main.component/main.component';
+import { inMemoryDataService } from './services/in-memory-data.service';
 import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, MainComponent],
-    imports: [BrowserModule, AppRoutingModule, HttpClientModule, HttpClientInMemoryWebApiModule.forRoot(InMemoryData), ReactiveFormsModule],
+  declarations: [AppComponent, loginComponent, mainComponent],
+    imports: [BrowserModule, AppRoutingModule, HttpClientModule, HttpClientInMemoryWebApiModule.forRoot(inMemoryDataService), ReactiveFormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [AppComponent],
 })

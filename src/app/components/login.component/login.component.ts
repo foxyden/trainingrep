@@ -1,6 +1,6 @@
 import {Component, inject, OnInit, signal} from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
-import { DataService } from '../../services/data.service';
+import { dataService } from '../../services/data.service';
 import { Router } from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { User } from '../../models/user.interface';
@@ -11,15 +11,15 @@ import { User } from '../../models/user.interface';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
-export class LoginComponent{
+export class loginComponent {
   message: string | null = null;
   success: boolean = false;
-  AllUsers: User[] = [];
-  dataService = inject(DataService);
+  allUsers: User[] = [];
+  dataService = inject(dataService);
   router = inject(Router);
-  private fb = inject(FormBuilder);
-  loginForm = this.fb.group({
-    email: ['', Validators.required],
+  private formBuilder = inject(FormBuilder);
+  loginForm = this.formBuilder.group({
+    email: ['', Validators.required, Validators.email],
     password: ['', Validators.required],
   })
 
@@ -32,7 +32,7 @@ export class LoginComponent{
   getUsers(): void {
     this.dataService.getUsers()
       .subscribe(
-        Users => this.AllUsers = Users);
+        Users => this.allUsers = Users);
   }
 
   onSubmit() {
@@ -50,14 +50,6 @@ export class LoginComponent{
       console.log('Введены данные:', email, password);
     });
   }
-  /*
-  isAuthenticationError = signal(false);
-
-  autent() {
-    this.isAuthenticationError.set(this.dataService.autent());
-  }
-
-   */
 
   togglePassword() {
     const input = document.querySelector<HTMLInputElement>('.password-input');

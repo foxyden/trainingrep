@@ -1,9 +1,9 @@
-import { Component, inject, signal } from '@angular/core';
+import {Component, inject, OnInit, signal} from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
-import { DataService } from '../../services/data.service';
+import { dataService } from '../../services/data.service';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { User } from '../../services/in-memory-data.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { User } from '../../models/user.interface';
 
 @Component({
   selector: 'app-login',
@@ -11,16 +11,44 @@ import { User } from '../../services/in-memory-data.service';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
-export class LoginComponent {
-  dataService = inject(DataService);
+export class loginComponent {
+  message: string | null = null;
+  success: boolean = false;
+  allUsers: User[] = [];
+  dataService = inject(dataService);
   router = inject(Router);
+  private formBuilder = inject(FormBuilder);
+  loginForm = this.formBuilder.group({
+    email: ['', Validators.required, Validators.email],
+    password: ['', Validators.required],
+  })
 
   constructor() {}
 
-  isAuthenticationError = signal(false);
+  ngOnInit(): void {
+    this.getUsers()
+  }
 
-  autent() {
-    this.isAuthenticationError.set(this.dataService.autent());
+  getUsers(): void {
+    this.dataService.getUsers()
+      .subscribe(
+        Users => this.allUsers = Users);
+  }
+
+  onSubmit() {
+    if (this.loginForm.invalid) {
+      this.message = 'Get them two fields filled';
+      this.success = false;
+      this.loginForm.markAllAsTouched();
+      return;
+    }
+
+    const { email, password } = this.loginForm.value;
+    this.dataService.checkData(email, password).subscribe((result) => {
+      this.success = result.success;
+      this.message = result.message;
+      console.log('Введены данные:', email, password);
+    });
   }
 
   togglePassword() {

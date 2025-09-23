@@ -1,17 +1,11 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-
-export interface User {
-  id: number;
-  name: string;
-  email: string;
-  password: string;
-}
+import { User } from '../models/user.interface';
 
 @Injectable({
   providedIn: 'root',
 })
-export class InMemoryData implements InMemoryDbService {
+export class inMemoryDataService implements InMemoryDbService {
   createDb() {
     const Users: User[] = [
       { id: 1, name: 'John Doe', email: 'test@example.com', password: '12345' },

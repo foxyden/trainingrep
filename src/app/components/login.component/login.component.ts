@@ -4,6 +4,7 @@ import { dataService } from '../../services/data.service';
 import { Router } from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { User } from '../../models/user.interface';
+import { DataShareService } from '../../services/data-share.service';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export class loginComponent {
   message: string | null = null;
   success: boolean = false;
   allUsers: User[] = [];
+  shared = inject(DataShareService);
   dataService = inject(dataService);
   router = inject(Router);
   private formBuilder = inject(FormBuilder);
@@ -24,6 +26,10 @@ export class loginComponent {
   })
 
   constructor() {}
+
+  send(msg: string): void {
+    this.shared.setMessage(msg);
+  }
 
   ngOnInit(): void {
     this.getUsers()
@@ -47,6 +53,7 @@ export class loginComponent {
     this.dataService.checkData(email, password).subscribe((result) => {
       this.success = result.success;
       this.message = result.message;
+      this.send(result.message);
       console.log('Введены данные:', email, password);
     });
   }

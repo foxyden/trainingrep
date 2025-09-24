@@ -34,7 +34,7 @@ export class dataService {
 
         if (userForCheck.password === password) {
           this.router.navigate(['/main']);
-          return { success: true, message: `Hello ${userForCheck.name}`, userId: userForCheck.id };
+          return { success: true, message: userForCheck.name };
         } else {
           return { success: false, message: 'Password is wrong!' };
         }

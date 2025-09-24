@@ -1,5 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {dataService} from '../../services/data.service';
+import { DataShareService } from '../../services/data-share.service';
 
 @Component({
   selector: 'app-main',
@@ -8,10 +9,15 @@ import {dataService} from '../../services/data.service';
   styleUrl: './main.component.css',
 })
 export class mainComponent {
-  message: string | null = null;
-  dataService = inject(dataService);
-  activeCard: 'debit' | 'credit' = 'debit';
+  shared = inject(DataShareService);
+  username : string = "";
+  constructor() {
+    this.shared.message$.subscribe(msg => {
+      this.username = msg;
+    });
+  }
 
+  activeCard: 'debit' | 'credit' = 'debit';
   toggleCard(card: 'debit' | 'credit') {
     this.activeCard = card;
   }

@@ -1,0 +1,107 @@
+.transaction-card {
+  width: 617px;
+  height: 91px;
+  background: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: 'Space Grotesk', sans-serif;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.category {
+  background: #ececec;
+  border-radius: 6px;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 75%;
+  text-align: center;
+}
+
+.transaction-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 16px;
+  color: #373737;
+  font-weight: 600;
+}
+
+.amount {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.amount.positive {
+  color: #2ecc71;
+}
+
+.amount.negative {
+  color: #e74c3c;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.date {
+  font-size: 12px;
+  color: #777;
+  flex: 1;
+  text-align: center;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 16px;
+}
+
+.circle.positive {
+  background: #2ecc71;
+}
+
+.circle.negative {
+  background: #e74c3c;
+}
+
+.type {
+  font-size: 14px;
+  color: #555;
+}
+
+.user {
+  font-size: 12px;
+  color: #999;
+}

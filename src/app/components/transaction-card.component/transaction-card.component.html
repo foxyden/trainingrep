@@ -1,0 +1,24 @@
+<div class="transaction-card">
+  <div class="category">{{ category }}</div>
+
+  <div class="transaction-content">
+    <div class="top-row">
+      <span class="title">{{ title }}</span>
+      <span class="amount" [class.positive]="isPositive" [class.negative]="!isPositive">
+        {{ displayAmount }}
+      </span>
+    </div>
+    <div class="bottom-row">
+      <div class="status">
+        <div class="circle" [class.positive]="isPositive" [class.negative]="!isPositive">
+          <span class="arrow">{{ isPositive ? '↑' : '↓' }}</span>
+        </div>
+        <span class="type">{{ transactionType }}</span>
+      </div>
+
+      <span class="date">{{ date }}</span>
+
+      <span class="user">{{ username }}</span>
+    </div>
+  </div>
+</div>

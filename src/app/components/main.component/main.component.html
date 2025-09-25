@@ -22,7 +22,33 @@
       </div>
     </div>
   </div>
-  <div class="center-col"></div>
+  <div class="center-col">
+    <div class="transactions-header">
+      <h3>Categories Subscriptions Obligatory Statistic Admin</h3> <!--Only a placeholder!!!!!!!!!-->
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          placeholder="search"
+          [(ngModel)]="searchTerm"
+          class="search-bar"
+        />
+      </div>
+    </div>
+
+    <div class="transactions-list">
+      <app-transaction-card
+        *ngFor="let t of filteredTransactions()"
+        [category]="t.category"
+        [title]="t.description"
+        [amount]="t.amount"
+        [username]="t.user"
+        [date]="t.date"
+      ></app-transaction-card>
+    </div>
+  </div>
+
+
   <div class="right-col">
     <div class="profile">
       <img src="assets/images/user.png" alt="avatar" class="avatar" />

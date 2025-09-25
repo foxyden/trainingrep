@@ -8,11 +8,20 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { loginComponent } from './components/login.component/login.component';
 import { mainComponent } from './components/main.component/main.component';
 import { inMemoryDataService } from './services/in-memory-data.service';
-import {ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { TransactionCardComponent } from './components/transaction-card.component/transaction-card.component';
 
 @NgModule({
   declarations: [AppComponent, loginComponent, mainComponent],
-    imports: [BrowserModule, AppRoutingModule, HttpClientModule, HttpClientInMemoryWebApiModule.forRoot(inMemoryDataService), ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(inMemoryDataService),
+    ReactiveFormsModule,
+    TransactionCardComponent,
+    FormsModule,
+  ],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [AppComponent],
 })
